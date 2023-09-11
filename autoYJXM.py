@@ -44,7 +44,7 @@ while looop == 'yes':
         plt.plot(days,x1,'-o',label = m1)
         plt.plot(days,x2,'-o',label = m2)
         plt.xlabel("日期")
-        plt.ylabel("销售额（RMB）")
+        plt.ylabel("销售额")
         plt.title('店铺: '+name)
         plt.legend()
     
