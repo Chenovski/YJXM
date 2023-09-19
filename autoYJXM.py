@@ -33,22 +33,26 @@ while looop == 'yes':
             names.append(x)
     
     days = list(range(start_date,end_date+1))
-    
+
     for name in names:
         idx1 = namesRaw1.index(name)
         idx2 = namesRaw2.index(name)
         x1 = list(df1.iloc[start_date:end_date+1,idx1]) 
         x2 = list(df2.iloc[start_date:end_date+1,idx2]) 
-
-        plt.figure(figsize=(6,5))
+        x = [x1,x2]
+        
+        fig = plt.figure(figsize=(20,5))
         plt.plot(days,x1,'-o',label = m1)
         plt.plot(days,x2,'-o',label = m2)
         plt.xlabel("日期")
         plt.ylabel("销售额")
-        plt.title('店铺: '+name)
+        plt.title(name)
         plt.legend()
-        plt.xticks(range(min(days), max(days)+1,2));
-    
+        plt.xticks(range(min(days), max(days)+1,2))
+        plt.table(cellText=x, colLabels=days, rowLabels=(m1,m2), bbox = [0, -.5, 1, .3])
+        
+        table = df1.iloc[start_date:end_date+1,idx1]
+        
     plt.show()
     
     looop = input('Another task? (yes/no): ')
