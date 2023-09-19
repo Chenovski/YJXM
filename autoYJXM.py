@@ -13,6 +13,7 @@ while looop == 'yes':
     m2 = input('Type another month (1-12): ')
     start_date = input('Type the start date (1-31): ')
     end_date = input('Type the end date (1-31): ')
+    save_opt = input('Save all figures? (yes/no): ')
     
     m1 += '月'
     m2 += '月'
@@ -51,8 +52,12 @@ while looop == 'yes':
         plt.xticks(range(min(days), max(days)+1,2))
         plt.table(cellText=x, colLabels=days, rowLabels=(m1,m2), bbox = [0, -.5, 1, .3])
         
-    plt.show()
-    
+        fig.tight_layout()
+        
+        if save_opt == 'yes':
+            plt.savefig(name +'.png')
+        else:
+            plt.show()
+        
     looop = input('Another task? (yes/no): ')
-    
     
