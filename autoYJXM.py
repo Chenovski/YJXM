@@ -47,6 +47,7 @@ while looop == 'yes':
         plt.ylabel("销售额")
         plt.title('店铺: '+name)
         plt.legend()
+        plt.xticks(range(min(days), max(days)+1,2));
     
     plt.show()
     
