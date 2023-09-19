@@ -42,7 +42,7 @@ while looop == 'yes':
         x2 = list(df2.iloc[start_date:end_date+1,idx2]) 
         x = [x1,x2]
         
-        fig = plt.figure(figsize=(20,5))
+        fig = plt.figure(figsize=(15,5))
         plt.plot(days,x1,'-o',label = m1)
         plt.plot(days,x2,'-o',label = m2)
         plt.xlabel("日期")
@@ -56,8 +56,10 @@ while looop == 'yes':
         
         if save_opt == 'yes':
             plt.savefig(name +'.png')
-        else:
-            plt.show()
+    
+    if save_opt != 'yes':
+        plt.show()
         
     looop = input('Another task? (yes/no): ')
+    
     
