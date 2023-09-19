@@ -51,8 +51,6 @@ while looop == 'yes':
         plt.xticks(range(min(days), max(days)+1,2))
         plt.table(cellText=x, colLabels=days, rowLabels=(m1,m2), bbox = [0, -.5, 1, .3])
         
-        table = df1.iloc[start_date:end_date+1,idx1]
-        
     plt.show()
     
     looop = input('Another task? (yes/no): ')
